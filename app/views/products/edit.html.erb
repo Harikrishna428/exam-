@@ -1,0 +1,33 @@
+<h1> creating new form </h1> 
+
+<% if @product.errors.any? %>
+<ul><% @product.errors.full_messages.each do |msg| %>
+	<li><%= msg %> </li>
+	<% end %> 
+</ul>
+<%end %>
+	
+end
+<table>
+
+<%= form_for @product do |p| %>
+	<p>
+	<%= p.label :name %></br>
+	<%= p.text_field :name %>
+	</p>
+
+	<p>
+	<%= p.label :description %></br>
+	<%= p.text_area :description %>
+ 	</p>
+
+ 	<p>
+	<%= p.label :price  %></br>
+	<%= p.text_field :price %>
+	</p>
+
+	<p>
+ 	<%= p.submit %>
+ 	</p>
+ <% end %>
+</table>
